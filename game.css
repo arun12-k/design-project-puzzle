@@ -1,0 +1,164 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Container styling for start and game sections */
+.start-container, .game-container {
+    text-align: center;
+}
+
+/* General button styling */
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+/* Grid container for tiles */
+.container {
+    display: grid;
+    width:25em;
+    grid-template-columns: repeat(3, 100px);
+    gap: 5px;
+    margin: 20px auto;
+}
+
+/* Tile styling */
+.tile {
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    cursor: pointer;
+}
+
+.tile.empty {
+    background: #f0f0f0;
+    cursor: default;
+}
+
+/* Header section for info display */
+header {
+    display: flex;
+    justify-content: space-between;
+    width: 320px;
+    margin: 0 auto;
+}
+
+/* Overlay for solution image */
+#solution-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none; /* Initially hidden */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#solution-overlay img {
+    max-width: 90%;
+    max-height: 90%;
+    border: 5px solid white;
+    border-radius: 10px;
+}
+
+/* Button inside solution overlay */
+#solution-overlay button {
+    margin-top: 20px;
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#solution-overlay button:hover {
+    background-color: #45a049;
+    float: left;
+}
+
+/* Info display section for moves and time */
+.info {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 0;
+}
+
+.info-item {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color:antiquewhite;
+}
+
+/* Popup for win/loss messages */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    z-index: 10;
+}
+
+.popup.hidden {
+    display: none;
+}
+
+#popup-emoji {
+    font-size: 3rem;
+}
+
+#close-popup {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#close-popup:hover {
+    background-color: #45a049;
+}
+
+#solution-button, #reset-button {
+    font-size: 1.5rem;
+    padding: 1rem;
+    background: linear-gradient(135deg, red, blue);
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  #solution-button:hover, #reset-button:hover {
+    background: linear-gradient(135deg, blue, red);
+  }
+
+  #claim-rewards {
+    display: none;
+}

@@ -1,0 +1,279 @@
+/* General Styles for Home Page */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('background.jpg'); /* Replace with your background image URL */
+  background-size: cover; /* Cover the entire background */
+  background-position: center; /* Center the image */
+  color: #333;
+}
+
+.cover-screen {
+  border: 5px solid transparent; /* Initial transparent border */
+  transition: border 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for border and shadow */
+}
+
+.cover-screen:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 40px hsla(0, 0%, 0%, 0.427);
+  padding: 130px 300px;
+  border-radius: 50px;
+  border: 5px solid #ffcc00; /* Change the border color */
+  animation: blink-border 1s infinite alternate; /* Blinking effect */
+}
+
+/* Keyframes for blinking effect */
+@keyframes blink-border {
+  0% {
+      border-color: hsl(180, 100%, 50%); /* Starting color */
+  }
+  100% {
+      border-color: transparent; /* Ending color */
+  }
+}
+
+#game-title {
+  font-size: 4em; /* Larger font for game title */
+  color: rgb(135, 215, 235); /* Color for title */
+  margin-bottom: 20px;
+  transition: color 0.3s ease, text-shadow 0.3s ease; /* Transition for color and shadow */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+#game-title:hover {
+  color: rgb(144, 232, 238); /* Change color on hover */
+  text-shadow: 2px 2px 10px rgba(76, 175, 80, 0.5);
+  background: linear-gradient(90deg, hsl(2, 39%, 40%), #7cb342);
+}
+
+#result {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #4a4a4a;
+}
+
+.cover-screen {
+  text-align: center; /* This keeps the title centered */
+}
+
+#start-button {
+  background: linear-gradient(90deg, hwb(178 0% 26%), hwb(168 29% 24%)); /* Fixed gradient */
+  font-size: 2.5em;
+  padding: 15px 35px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  outline: none;
+  color: white; /* Change text color to white */
+}
+
+#start-button:hover {
+  background: linear-gradient(90deg, hsl(2, 39%, 40%), #7cb342);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+#start-button:focus {
+  box-shadow: 0 0 0 3px #4caaaf80;
+}
+
+#moves {
+  font-size: 1.5em;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  color:#23c0dc;
+  font-style:inherit;
+  font-weight: bolder;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: white;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 50%;
+}
+
+.close {
+  float: right;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Profile Modal Styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.modal.active {
+  display: block; /* Show the modal */
+}
+
+.close {
+  color: hsl(276, 73%, 41%);
+  float: right;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.form-row {
+  margin-bottom: 10px;
+}
+
+.form-row label {
+  display: block; /* Labels on separate lines */
+  margin-bottom: 5px; /* Space below labels */
+}
+
+.modal-content {
+  background-color: lightblue;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px; /* Padding around the content */
+  border: 5px solid hwb(271 5% 18%);
+  width: 30%; /* Could be more or less, depending on screen size */
+  border-radius: 15px;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  font-weight: 600; /* Makes the font bolder */
+  color: #000000; /* Darker black color */
+}
+
+.form-row input {
+  width: calc(100% - 20px); /* Full width minus padding */
+  padding: 10px;
+  border: 10px solid hsla(286, 76%, 41%, 0.89);
+  border-radius: 10px;
+  box-sizing: border-box; /* Include padding and border in the element's total width */
+}
+
+button[type="submit"] {
+  background-color: #9119b6;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 20px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: hsl(281, 40%, 45%); /* Darker green */
+}
+
+/* Updated Profile Icon Styles */
+.profile-icon {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: linear-gradient(90deg, #4b0082, #9370db); /* Gradient from dark purple to light purple */
+  border-radius: 50%; /* Circular background */
+  padding: 15px; /* Increased padding for a larger icon */
+  border: none; /* Remove the green border */
+  cursor: pointer; /* Pointer on hover */
+  display: flex; /* Flexbox to center content */
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  transition: background 0.3s, transform 0.3s; /* Smooth transition */
+
+
+}
+
+.profile-icon:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+.profile-icon svg {
+  width: 70px; /* Increased width for the human icon */
+  height: 50px; /* Increased height for the human icon */
+  fill: white; /* Color for the human icon */
+}
+
+.profile-label {
+  margin-top: 20px; /* Space between the icon and label */
+  text-align: center; /* Center the label */
+  font-size: 1.4em; /* Adjust font size for better readability */
+  color: whitesmoke;
+}
+
+#profileIcon {
+  width: 70px; /* Set the width of the icon */
+  height: 70px; /* Set the height of the icon */
+  border-radius: 50%; /* Make the icon circular */
+  overflow: hidden; /* Hide overflow to maintain circular shape */
+  position: absolute; /* Use absolute positioning */
+  top: 10px; /* Distance from the top */
+  left: 10px; /* Distance from the left */
+  display:flex; /* Centering the image */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+}
+.profile-pic {
+  width: 100%; /* Fill the container */
+  height: 100%; /* Fill the container */
+  object-fit: cover; /* Maintain the aspect ratio */
+  position: absolute; /* Fill the circular area */
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+}
+
+/* Update Profile Icon Text Color */
+.profile-icon-text {
+  margin-top: 5px; /* Space between icon and text */
+  color: #e0e0e0; /* Darker color for better visibility, adjust as needed */
+  font-size: 1.0em; /* Adjust font size for readability */
+  text-align: center; /* Center the text */
+}
+
+/* Positioning adjustments for small screens */
+@media (max-width: 600px) {
+  .modal-content {
+      width: 80%; /* Adjust for small screens */
+  }
+  .profile-icon {
+      top: 10px; /* Adjust position for small screens */
+      left: 10px; /* Adjust position for small screens */
+  }
+}
+
+

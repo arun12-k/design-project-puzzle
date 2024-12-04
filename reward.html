@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claim Rewards</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #ecf0f1;
+        }
+        .container {
+            text-align: center; 
+            background-color: #34495e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+        .reward-display {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            background-color: #e67e22;
+            color: #ffffff;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 5px;
+        }
+        button:hover {
+            background-color: #d35400;
+        }
+        .message {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        #closeButton {
+            display: none; /* Hide the Close button initially */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Level Complete!</h2>
+    <p class="reward-display">Your Rewards:</p>
+    <ul id="rewardsList"></ul>
+    <button id="claimButton" onclick="claimRewards()" disabled>Claim Your Rewards</button>
+    <button id="closeButton" onclick="closePage()">Close</button>
+    <div class="message" id="message"></div>
+</div>
+
+<script>
+    // Player's rewards (for demonstration purposes, these could be generated dynamically)
+    const rewards = [
+        { name: "50 Coins", claimed: false },
+        { name: "1 Extra Life", claimed: false },
+        { name: "Speed Boost (5 mins)", claimed: false }
+    ];
+
+    // Boolean to track if the level is finished
+    let levelFinished = false;
+
+    // Simulate finishing the level after 3 seconds (for demo purposes)
+    setTimeout(finishLevel, 3000);
+
+    // Function to simulate finishing a level
+    function finishLevel() {
+        levelFinished = true;
+        const messageElement = document.getElementById("message");
+        const claimButton = document.getElementById("claimButton");
+
+        // Display level completion message and enable the claim button
+        messageElement.textContent = "Congratulations! You finished the level.";
+        messageElement.style.color = "#2ecc71";
+        claimButton.disabled = false;
+
+        // Display available rewards
+        displayRewards();
+    }
+
+    // Function to display the list of rewards
+    function displayRewards() {
+        const rewardsList = document.getElementById("rewardsList");
+        rewardsList.innerHTML = "";
+
+        rewards.forEach(reward => {
+            const li = document.createElement("li");
+            li.textContent = reward.name;
+            rewardsList.appendChild(li);
+        });
+    }
+
+    // Function to claim the rewards after finishing the level
+    function claimRewards() {
+        const messageElement = document.getElementById("message");
+
+        if (levelFinished) {
+            // Mark all rewards as claimed and disable the claim button
+            rewards.forEach(reward => reward.claimed = true);
+            messageElement.textContent = `You claimed your rewards: ${rewards.map(r => r.name).join(", ")}`;
+            messageElement.style.color = "#e67e22";
+            document.getElementById("claimButton").disabled = true;
+
+            // Show the Close button after claiming the rewards
+            document.getElementById("closeButton").style.display = "inline-block"; // Show the Close button
+        } else {
+            // Prevent claiming if the level isn't finished (safety check)
+            messageElement.textContent = "Finish the level first!";
+            messageElement.style.color = "red";
+        }
+    }
+
+    // Function to close the page and navigate to s1.html
+    function closePage() {
+        window.location.href = "s1.html"; // Replace with your actual path to s1.html
+    }
+</script>
+
+</body>
+</html>

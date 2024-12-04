@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle Game</title>
+    <link rel="stylesheet" href="game.css">
+</head>
+<body>
+    <div class="game-container">
+        <header>
+            <div id="moves" class="info-item">Moves: 0</div>
+            <div id="time" class="info-item">Time: 02:00</div>
+        </header>
+
+        <div class="container"></div>
+
+        <button id="solution-button">Show Solution</button>
+        <button id="reset-button">Reset</button>
+    </div>
+
+    <!-- Solution Overlay -->
+    <div id="solution-overlay">
+        <img src="original_image.png" alt="Solution">
+        <button id="close-solution">Close</button>
+    </div>
+
+    <!-- Win/Loss Popup -->
+    <div id="popup" class="popup hidden">
+        <div id="popup-emoji">🎉</div>
+        <div id="popup-message">Congratulations! You solved the puzzle!</div>
+        <button id="close-popup">Close</button>
+        <button id="claim-rewards" class ="hidden">Claim Rewards</button>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>

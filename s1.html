@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sliding puzzle</title>
+    <link rel="stylesheet" href="s1.css"/>
+    <script src="s1.js" defer></script>
+</head>
+<body>
+    <div class="cover-screen">
+        <div class="profile-icon" id="profileIcon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-3.31 0-10 1.67-10 5v2h20v-2c0-3.33-6.69-5-10-5z"/>
+            </svg>
+            <div class="profile-icon-text">Profile</div>
+        </div>
+        <h1 id="game-title">IT'S JOY TIME</h1>
+        <p id="result"></p>
+        <button id="start-button" >Start Game</button>
+    </div>
+    <div id="moves"></div>
+    <!-- Profile Modal -->
+    <div class="modal" id="profileModal">
+        <div class="modal-content">
+            <span id="closeModal" class="close">&times;</span>
+            <h2>Profile Details</h2>
+            <form id="profileForm">
+                <div class="form-row">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" class="hidden" required/>
+                    <span id="nameDisplay"></span>
+                </div>
+                <div class="form-row">
+                    <label for="dob">Date of Birth:</label>
+                    <span id="dobDisplay"></span>
+                    <input type="date" id="dob" class="hidden" required/>
+                </div>
+                <div class="form-row">
+                    <label for="phone">Phone:</label>
+                    <span id="phoneDisplay"></span>
+                    <input type="number" id="phone" class="hidden" pattern="" required/>
+                </div>
+                <div class="form-row">
+                    <label for="profilePic">Profile Picture:</label>
+                    <input type="file" id="profilePic" accept="image/*" required/>
+                </div>
+                <button type="submit">Save</button>
+                <!-- Success Message -->
+                <div id="saveMessage" class="hidden"></div>
+            </form>
+        </div>
+    </div>
+
+    <script src="s1.js"></script>
+</body>
+</html>
